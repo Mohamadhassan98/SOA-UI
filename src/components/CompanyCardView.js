@@ -27,8 +27,7 @@ function CompanyCardView(props) {
                         {props.companyName}
                     </Typography>
                     <Typography>
-                        {/*TODO("Choose what to show*/}
-                        This is a media card. You can use this section to describe the content.
+                        email: {props.email}
                     </Typography>
                 </CardContent>
             </CardActionArea>
@@ -46,7 +45,8 @@ CompanyCardView.propTypes = {
     imageSource: PropTypes.string.isRequired,
     imageTitle: PropTypes.string,
     companyName: PropTypes.string.isRequired,
-    pk: PropTypes.number.isRequired
+    pk: PropTypes.number.isRequired,
+    email: PropTypes.string.isRequired
 };
 
 CompanyCardView.defaultProps = {

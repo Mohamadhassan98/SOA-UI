@@ -1,46 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89e4726d-c21b-4cde-a6cc-5aaab303f8ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Mohamadhassan.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ArashCardView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CompanyCardView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DeleteConfirmAlert.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ProfileNavBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Title.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/crowns.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jane-doe.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/404NotFound.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/AddArash.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/AddCompany.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ArashPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/EditArash.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/EditCompany.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/History.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/HomePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/MaterialSignIn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/MaterialSignUp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Profile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ProfileMaster.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SignInForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SignUpForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/AddArash.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/AddCompany.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/ArashCardView.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/EditCompany.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/MaterialSignIn.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/MaterialSignUp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unnamed.jpg" afterDir="false" />
+    <list default="true" id="89e4726d-c21b-4cde-a6cc-5aaab303f8ba" name="Default Changelist" comment="Add Arash works perfectly">
+      <change afterPath="$PROJECT_DIR$/src/Globals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CSRFToken.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Mohamadhassan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Mohamadhassan.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CompanyCardView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CompanyCardView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AddArash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AddArash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArashPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArashPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/AddArash.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/AddArash.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -129,8 +101,16 @@
       <workItem from="1565249272225" duration="25600000" />
       <workItem from="1565442604270" duration="28454000" />
       <workItem from="1565498479168" duration="2161000" />
-      <workItem from="1565500833168" duration="1336000" />
+      <workItem from="1565500833168" duration="16046000" />
+      <workItem from="1565539008858" duration="10972000" />
     </task>
+    <task id="LOCAL‎۰۰۰۰۱" summary="First Commit">
+      <created>1565502237719</created>
+      <option name="number" value="LOCAL‎۰۰۰۰۱" />
+      <option name="presentableId" value="LOCAL‎۰۰۰۰۱" />
+      <updated>1565502237719</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,5 +128,14 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="First Commit" />
+    <MESSAGE value="Add Arash works perfectly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Arash works perfectly" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

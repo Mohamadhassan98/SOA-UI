@@ -93,3 +93,7 @@ body {
 .MuiInputBase-root {
     color: white;
 }
+
+.MuiFormHelperText-root {
+    color: red;
+}
