@@ -9,7 +9,7 @@ import Profile from "../components/ProfileNavBar";
 import '../styles/AddArash.css';
 import {StylesProvider} from '@material-ui/styles';
 import DateFnsUtils from '@date-io/date-fns';
-import {KeyboardDatePicker, MuiPickersUtilsProvider,} from '@material-ui/pickers';
+import {KeyboardDatePicker, MuiPickersUtilsProvider} from '@material-ui/pickers';
 import axios from "axios";
 import {compareDates, getDateString} from '../Globals';
 
@@ -93,12 +93,12 @@ export default class AddArash extends React.Component {
             });
             invalidData = true;
         }
-        return invalidData;
+        return !invalidData;
     };
 
     submitHandle = (e) => {
         e.preventDefault();
-        if (!this.validateData()) {
+        if (this.validateData()) {
             const url = 'http://127.0.0.1:8000/add/arash/';
             const data = {
                 public_key: this.state.publicKey,
@@ -218,7 +218,7 @@ export default class AddArash extends React.Component {
                                     <Typography component="h1" variant="h5">
                                         Add Arash
                                     </Typography>
-                                    <form className='form'>
+                                    <form className='form' noValidate>
                                         <Grid container spacing={2}>
                                             <Grid item xs={12}>
                                                 <TextField

@@ -12,8 +12,7 @@ import EditCompany from "./pages/EditCompany";
 import MaterialSignIn from "./pages/MaterialSignIn";
 import AddArash from "./pages/AddArash";
 import EditArash from "./pages/EditArash";
-import Profile from "./pages/Profile";
-import ProfileMaster from "./pages/ProfileMaster";
+import ProfilePage from "./pages/ProfilePage";
 import History from "./pages/History";
 
 const route = (
@@ -21,8 +20,7 @@ const route = (
         <Switch>
             <Route exact path='/' component={MaterialSignIn}/>
             <Route path='/sign-up' component={MaterialSignUp}/>
-            <Route path="/profile" component={Profile}/>
-            <Route path="/master" component={ProfileMaster}/>
+            <Route path="/profile/:pk" component={ProfilePage}/>
             <Route path="/history" component={History}/>
             <Route path='/home' component={HomePage}/>
             <Route path='/company/add' component={AddCompany}/>
