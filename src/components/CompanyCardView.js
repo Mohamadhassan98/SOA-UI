@@ -8,8 +8,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import DeleteConfirmAlert from "./DeleteConfirmAlert";
+import axios from 'axios';
 
 function CompanyCardView(props) {
+    const handleDelete = () => {
+        const url = `http://127.0.0.1:8000/company/${props.pk}`;
+        const redirect = '/home';
+        axios.delete(url).then(response => {
+            props.history.push(redirect);
+        }).catch(error => console.error(error));
+    };
     return (
         <Card className='CompanyCard'>
             <CardActionArea
@@ -32,7 +40,7 @@ function CompanyCardView(props) {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <DeleteConfirmAlert model='Company'/>
+                <DeleteConfirmAlert model='Company' confirmHandle={handleDelete}/>
                 <Button href={'/company/' + props.pk + '/edit'}>
                     Edit
                 </Button>

@@ -14,3 +14,15 @@ export function compareDates(first, second) {
     if (firstDay < secondDay) return -1;
     return 0;
 }
+
+export function containsDigitOnly(value) {
+    return /^\d*$/.test(value);
+}
+
+export function isEmpty(obj) {
+    return Object.keys(obj).length === 0;
+}
+
+export function isEmail(email) {
+    return /(\S+)@(\S+)\.(\S+)/.test(email);
+}

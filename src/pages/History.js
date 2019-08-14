@@ -5,64 +5,69 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Title from '../components/Title';
-import {CssBaseline} from "@material-ui/core";
-import Profile from "../components/ProfileNavBar";
-import Container from "@material-ui/core/Container";
-import axios from "axios";
+import '../styles/History.css'
 
 class History extends Component {
-
-    icons = {
-        //TODO("Add corresponding icons from material icons")
-        '+': '',
-        '-': '',
-        '*': ''
-    };
-
     constructor(props) {
         super(props);
+        this.pk = props.match.params.pk;
         this.state = {
             histories: []
         };
     }
 
-    componentDidMount() {
-        const url = '';
-        axios.get('')
+
+    async componentDidMount() {
+        try {
+            console.log("i am in history");
+            // const res = await fetch('http://127.0.0.1:8000/user/'+ this.pk + '/logs/', {
+
+            const res = await fetch('http://127.0.0.1:8000/user/1/logs/', {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': this.csrftoken
+                }
+            });
+            const histories = await res.json();
+            console.log(histories);
+            this.setState({
+                histories
+            });
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     render() {
         return (
             <React.Fragment>
-                <CssBaseline/>
-                <Profile/>
-                <Container component='main' maxWidth='md'>
-                    <Title>History</Title>
-                    <Table size="small">
-                        <CssBaseline/>
-                        <TableHead>
+                <Title>History</Title>
+                <Table size="small">
+                    <TableHead>
+                        <TableRow className="tablehead">
+                            <TableCell className="tablecell">Date</TableCell>
+                            <TableCell className="tablecell">Operation</TableCell>
+                            <TableCell className="tablecell">Operand</TableCell>
+                            <TableCell className="tablecell">Details</TableCell>
+                            <TableCell className="tablecell" align="right">Object</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {this.state.histories.map(history => (
                             <TableRow className="tablehead">
-                                <TableCell className="tablecell">Date</TableCell>
-                                <TableCell className="tablecell">Operation</TableCell>
-                                <TableCell className="tablecell">Operand</TableCell>
-                                <TableCell className="tablecell">Details</TableCell>
-                                <TableCell className="tablecell" align="right">Object</TableCell>
+                                <TableCell className="tablecell">{history.date}</TableCell>
+                                <TableCell className="tablecell">{history.operation}</TableCell>
+                                <TableCell className="tablecell">{history.operand}</TableCell>
+                                <TableCell className="tablecell">{history.fields}</TableCell>
+                                <TableCell className="tablecell" align="right">{history.operand_object}</TableCell>
                             </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {this.state.histories.map(log =>
-                                <TableRow className="tablehead">
-                                    <TableCell className="tablecell">{log.date}</TableCell>
-                                    <TableCell className="tablecell">{this.icons[log.operation]}</TableCell>
-                                    <TableCell className="tablecell">{log.operand}</TableCell>
-                                    <TableCell className="tablecell">{log.details}</TableCell>
-                                </TableRow>
-                            )}
-                        </TableBody>
-                    </Table>
-                </Container>
-            </React.Fragment>
+                        ))}
 
+                    </TableBody>
+                </Table>
+
+            </React.Fragment>
         );
     }
 }

@@ -6,7 +6,6 @@ import Container from '@material-ui/core/Container';
 import Profile from "../components/ProfileNavBar";
 import '../App.css';
 import CompanyCardView from "../components/CompanyCardView";
-// import getCookie from "../components/CSRFToken";
 import axios from 'axios';
 import Typography from "@material-ui/core/Typography";
 
@@ -23,7 +22,7 @@ export default class HomePage extends React.Component {
     }
 
     componentDidMount() {
-        axios.defaults.withCredentials = true;
+        // axios.defaults.withCredentials = true;
         const url = 'http://127.0.0.1:8000/companies';
         const config = {
             headers: {
@@ -34,25 +33,9 @@ export default class HomePage extends React.Component {
         };
         axios.get(url, config).then(response => {
             this.setState({
-                companies: response.data.companies
+                companies: response.data
             })
         }).catch(error => console.error(error)); //TODO("Errors are welcomed")
-        // try {
-        //     const res = await fetch(, {
-        //         headers: {
-        //             'Accept': 'application/json',
-        //             'Content-Type': 'application/json',
-        //             'X-CSRFToken': this.csrftoken
-        //         }
-        //     });
-        //     const companies = await res.json();
-        //     this.setState({
-        //         companies
-        //     });
-        // } catch (e) {
-        //     console.log(e);
-        // }
-
     }
 
     render() {
@@ -60,10 +43,9 @@ export default class HomePage extends React.Component {
         return (
             <React.Fragment>
                 <CssBaseline/>
-                <Profile emailAddress={this.user.email}
-                         firstName={this.user.first_name}
-                         lastName={this.user.last_name}
-                         isMaster={this.user.status === 'ma'}/>
+                <Profile
+                    user={this.user}
+                    myHistory={this.props.history}/>
                 <main className='HomePageMain'>
                     <Container maxWidth='md'>
                         <div className='heroButtons'>
@@ -77,7 +59,7 @@ export default class HomePage extends React.Component {
                         </div>
                     </Container>
                     <Container className='cardGrid' maxWidth="md">
-                        {this.state.companies.length === 0 ? (
+                        {this.state.companies && this.state.companies.length !== 0 ? (
                             <Grid container spacing={4}>
                                 {this.state.companies.map(company => (
                                     <Grid item key={company.id} xs={12} sm={6} md={4}>

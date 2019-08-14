@@ -8,8 +8,16 @@ import PropTypes from "prop-types";
 import DeleteConfirmAlert from "./DeleteConfirmAlert";
 import {Button} from "@material-ui/core";
 import '../styles/ArashCardView.css';
+import axios from "axios";
 
 function ArashCardView(props) {
+    const handleDelete = () => {
+        const url = `http://127.0.0.1:8000/arash/${props.apk}`;
+        const redirect = `/company/${props.pk}`;
+        axios.delete(url).then(response => {
+            props.history.push(redirect);
+        }).catch(error => console.error(error));
+    };
     return (
         <Card className='ArashCard'>
             <CardMedia
@@ -24,7 +32,7 @@ function ArashCardView(props) {
                 </Typography>
             </CardContent>
             <CardActions className={props.disabled ? 'disabled' : ''}>
-                <DeleteConfirmAlert model='Arash'/>
+                <DeleteConfirmAlert model='Arash' confirmHandle={handleDelete}/>
                 <Button href={'/company/' + props.pk + '/edit-arash/' + props.apk}>
                     Edit
                 </Button>

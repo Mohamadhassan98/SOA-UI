@@ -60,7 +60,6 @@ export default class MaterialSignIn extends React.Component {
     submitHandle = (e) => {
         e.preventDefault();
         if (this.validateData()) {
-            //Assuming there is username and password in states...
             const url = 'http://127.0.0.1:8000/accounts/login/';
             axios.post(url, {
                 username: this.state.username,
@@ -68,6 +67,7 @@ export default class MaterialSignIn extends React.Component {
             }).then(response => {
                 const csrftoken = response.headers.csrftoken;
                 const sessionId = response.headers.sessionid;
+                console.log(response.data);
                 this.props.history.push({
                     pathname: '/home',
                     state: {
@@ -76,6 +76,8 @@ export default class MaterialSignIn extends React.Component {
                         sessionId: sessionId
                     }
                 });
+            }).catch(error => {
+                //TODO("Errors are welcomed! #1")
             });
         }
     };
@@ -125,6 +127,7 @@ export default class MaterialSignIn extends React.Component {
                                         </Grid>
                                         <Grid item xs={12}>
                                             <TextField
+                                                required
                                                 id="password"
                                                 name='password'
                                                 variant="outlined"
@@ -142,7 +145,6 @@ export default class MaterialSignIn extends React.Component {
                                                                 edge="end"
                                                                 aria-label="toggle password visibility"
                                                                 onClick={this.handleClickShowPassword}
-                                                                // onMouseDown={handleMouseDownPassword}
                                                             >
                                                                 {this.state.isVisible ? <Visibility/> :
                                                                     <VisibilityOff/>}

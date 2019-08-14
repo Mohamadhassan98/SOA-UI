@@ -10,19 +10,32 @@ import Button from "@material-ui/core/Button";
 
 
 function ProfileNavBar(props) {
+    const user = props.user;
+    const goToProfile = () => {
+        props.myHistory.push('/profile', {
+            user: user
+        });
+    };
+
+    const goToHistory = () => {
+        props.history.push('/history', {
+            user: user
+        });
+    };
+
     return (
         <div className='ProfileNB'>
-            <label className='fullNameLabel'>{props.firstname + ' ' + props.lastname}</label>
-            <label className='emailLabel'>{props.emailAddress}</label>
+            <label className='fullNameLabel'>{user.first_name + ' ' + user.last_name}</label>
+            <label className='emailLabel'>{user.email}</label>
             <img className='profilePicture' src={profile} alt='ProfilePicture'/>
             {
-                props.isMaster &&
+                user.status === 'ma' &&
                 <img src={crown} className='masterCrown' alt='MasterCrown'/>
             }
-            <Button className='button profileButton' href='pages/profile'>
+            <Button className='button profileButton' onClick={goToProfile}>
                 Profile
             </Button>
-            <Button className='button historyButton' href='pages/history'>
+            <Button className='button historyButton' onClick={goToHistory}>
                 History
             </Button>
         </div>
@@ -48,9 +61,9 @@ function Profile(props) {
                         padding: '0px'
                     }}
                 >
-                    <ProfileNavBar emailAddress={props.emailAddress} firstname={props.firstName}
-                                   lastname={props.lastName}
-                                   isMaster={props.isMaster}/>
+                    <ProfileNavBar
+                        user={props.user}
+                        myHistory={props.myHistory}/>
                 </Popup>
             </Toolbar>
         </AppBar>
@@ -58,14 +71,8 @@ function Profile(props) {
 }
 
 Profile.propTypes = {
-    emailAddress: PropTypes.string.isRequired,
-    firstName: PropTypes.string.isRequired,
-    lastName: PropTypes.string.isRequired,
-    isMaster: PropTypes.bool
-};
-
-Profile.defaultProps = {
-    isMaster: false
+    myHistory: PropTypes.object.isRequired,
+    user: PropTypes.object.isRequired
 };
 
 export default Profile;

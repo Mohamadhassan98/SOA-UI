@@ -17,8 +17,12 @@ export default function DeleteConfirmAlert(props) {
 
     function handleClose() {
         setOpen(false);
-        //TODO("Request Deleting the object")
     }
+
+    const handleConfirm = () => {
+        handleClose();
+        props.confirmHandle();
+    };
 
     return (
         <div>
@@ -38,7 +42,7 @@ export default function DeleteConfirmAlert(props) {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose} color="primary">
+                    <Button onClick={handleConfirm} color="primary">
                         Yes
                     </Button>
                     <Button onClick={handleClose} color="primary" autoFocus>
@@ -51,5 +55,6 @@ export default function DeleteConfirmAlert(props) {
 }
 
 DeleteConfirmAlert.propTypes = {
-    model: PropTypes.string.isRequired
+    model: PropTypes.string.isRequired,
+    confirmHandle: PropTypes.func.isRequired
 };

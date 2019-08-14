@@ -295,6 +295,7 @@ body {
 
 .HomePageMain {
     background: #2E4158;
+    height: -webkit-fill-available;
 }
 
 .HomePageMain > .cardGrid {
